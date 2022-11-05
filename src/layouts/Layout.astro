@@ -6,6 +6,7 @@ export interface Props {
 const { title } = Astro.props;
 
 import "../styles/style.css";
+import Navigation from "../components/Nav.astro";
 ---
 
 <!DOCTYPE html>
@@ -18,19 +19,8 @@ import "../styles/style.css";
     <title>{title}</title>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/about/">About</a>
-        </li>
-        <li>
-          <a href="/blog/">Blog</a>
-        </li>
-      </ul>
-    </nav>
+    <Navigation />
     <slot />
+    <footer><small>&copy; Michelle Barker 2022</small></footer>
   </body>
 </html>

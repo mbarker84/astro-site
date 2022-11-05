@@ -1,12 +1,27 @@
 ---
 export interface Props {
   title: string;
+  body: string;
 }
 
-const { title, body } = Astro.props;
+const { title, body, type } = Astro.props;
 ---
 
 <section>
-  <h2>{title}</h2>
-  {body}
+  <div class="container">
+    <h2>{title}</h2>
+    {body}
+    <slot />
+  </div>
 </section>
+
+<style>
+  section {
+    background: var(--bg);
+  }
+
+  section:nth-child(odd) {
+    background: var(--accent2);
+    color: var(--bg);
+  }
+</style>
