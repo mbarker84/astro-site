@@ -2,28 +2,39 @@
 import Layout from "../layouts/Layout.astro";
 import SectionBlock from "../components/SectionBlock.astro";
 import Hero from "../components/Hero.astro";
+import Grid from "../components/Grid.astro";
+import LargeStat from "../components/LargeStat.astro";
 
-const sections = await Astro.glob("../pages/homepage/*.md");
+import {
+  frontmatter as section1Frontmatter,
+  compiledContent as section1CompiledContent,
+} from "../pages/homepage/02-why.md";
+import {
+  frontmatter as section2Frontmatter,
+  compiledContent as section2CompiledContent,
+} from "../pages/homepage/03-how.md";
+
+// const sections = await Astro.glob("../pages/homepage/*.md");
 ---
 
 <Layout title="Oh hello">
   <main>
-    {
-      sections.map((post) => {
-        if (post.frontmatter.type === "hero") {
-          return (
-            <Hero title={post.frontmatter.title} body={post.frontmatter.body}>
-              <div set:html={post.compiledContent()} />
-            </Hero>
-          );
-        } else {
-          return (
-            <SectionBlock title={post.frontmatter.title}>
-              <div set:html={post.compiledContent()} />
-            </SectionBlock>
-          );
-        }
-      })
-    }
+    <Hero />
+    <SectionBlock title={section1Frontmatter.title} id="why">
+      <div class="markdown">
+        <div set:html={section1CompiledContent()}></div>
+      </div>
+      <LargeStat
+        title={section1Frontmatter.largeStatTitle}
+        body={section1Frontmatter.largeStatBody}
+        source={section1Frontmatter.source}
+      />
+      <Grid />
+    </SectionBlock>
+    <SectionBlock title={section2Frontmatter.title} id="how">
+      <div class="markdown">
+        <div set:html={section2CompiledContent()}></div>
+      </div>
+    </SectionBlock>
   </main>
 </Layout>

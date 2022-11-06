@@ -17,7 +17,7 @@
     aspect-ratio: 1;
     width: fit-content;
     padding: var(--space-m);
-    border-radius: 100%;
+    border-radius: 1rem;
     transform: rotate(15deg);
   }
 
@@ -25,8 +25,15 @@
     position: absolute;
     content: "";
     inset: 0.35em;
-    border-radius: 50%;
+    border-radius: 1.1rem;
     border: 0.1em dashed var(--accent1);
+  }
+
+  @supports (aspect-ratio: 1) and (width: fit-content) {
+    .progress-counter,
+    .progress-counter::after {
+      border-radius: 50%;
+    }
   }
 
   span {

@@ -40,15 +40,15 @@
 
   /* Type */
   /* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1300,20,1.5,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
-  --step--2: clamp(0.56rem, calc(0.74rem + -0.23vw), 0.69rem);
-  --step--1: clamp(0.83rem, calc(0.83rem + 0vw), 0.83rem);
-  --step-0: clamp(1rem, calc(0.92rem + 0.41vw), 1.25rem);
-  --step-1: clamp(1.2rem, calc(0.98rem + 1.1vw), 1.88rem);
-  --step-2: clamp(1.44rem, calc(0.99rem + 2.24vw), 2.81rem);
-  --step-3: clamp(1.73rem, calc(0.91rem + 4.07vw), 4.22rem);
-  --step-4: clamp(2.07rem, calc(0.68rem + 6.95vw), 6.33rem);
-  --step-5: clamp(2.49rem, calc(0.2rem + 11.44vw), 9.49rem);
-  --step-6: clamp(2.99rem, calc(-0.69rem + 18.37vw), 14.24rem);
+  --step--2: clamp(0.56rem, calc(0.56rem + -0.01vw), 0.56rem);
+  --step--1: clamp(0.75rem, calc(0.72rem + 0.14vw), 0.83rem);
+  --step-0: clamp(1rem, calc(1rem + 0.41vw), 1.5rem);
+  --step-1: clamp(1.33rem, calc(1.16rem + 0.88vw), 1.88rem);
+  --step-2: clamp(1.78rem, calc(1.44rem + 1.69vw), 2.81rem);
+  --step-3: clamp(2.37rem, calc(1.76rem + 3.02vw), 4.22rem);
+  --step-4: clamp(3.16rem, calc(2.12rem + 5.18vw), 6.33rem);
+  --step-5: clamp(4.21rem, calc(2.48rem + 8.63vw), 9.49rem);
+  --step-6: clamp(5.61rem, calc(2.79rem + 14.09vw), 14.24rem);
 
   /* Fonts */
   --heading: "Teko", sans-serif;
@@ -106,7 +106,7 @@ h4 {
 }
 
 p {
-  max-width: 70ch;
+  max-width: 60ch;
 }
 
 a {
@@ -129,9 +129,27 @@ section {
   padding: var(--space-2xl) 0;
 }
 
+strong {
+  font-family: var(--heading);
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
 .container {
   width: 100%;
   max-width: 80rem;
   margin: 0 auto;
   padding: 0 var(--space-m);
+}
+
+.markdown p:first-child {
+  font-size: var(--step-1);
+}
+
+.markdown * + * {
+  margin-top: var(--space-s);
+}
+
+.markdown a {
+  color: var(--accent1);
 }

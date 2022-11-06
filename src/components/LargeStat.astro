@@ -1,0 +1,43 @@
+---
+export interface Props {
+  title: string;
+  body: string;
+  source: object;
+}
+
+const { title, body, source } = Astro.props;
+---
+
+<article>
+  <div class="image-col"></div>
+  <div class="text-col">
+    <h3>{title}</h3>
+    <p>{body}</p>
+    <cite>
+      <a href={source.url}>{source.title}</a>
+    </cite>
+  </div>
+</article>
+
+<style>
+  article {
+    display: grid;
+    gap: var(--space-m);
+    margin-top: var(--space-xl);
+  }
+
+  @media (min-width: 800px) {
+    article {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  p {
+    margin-top: var(--space-s);
+  }
+
+  cite {
+    font-size: 1rem;
+    font-style: normal;
+  }
+</style>
