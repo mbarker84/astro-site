@@ -10,7 +10,7 @@ const { title, body, type } = Astro.props;
 <section>
   <div class="container">
     <h2>{title}</h2>
-    {body}
+    {body && <p>{body}</p>}
     <slot />
   </div>
 </section>
@@ -22,6 +22,6 @@ const { title, body, type } = Astro.props;
 
   section:nth-child(odd) {
     background: var(--accent2);
-    color: var(--bg);
+    color: white;
   }
 </style>

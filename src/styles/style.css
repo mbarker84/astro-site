@@ -4,6 +4,14 @@
   font-family: "Teko";
   src: local("Teko"), url("../fonts/Teko-Medium.woff") format("woff"),
     url("../fonts/Teko-Medium.ttf") format("ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mukta Light";
+  src: local("Mukta Light"), url("../fonts/Mukta-Light.woff") format("woff"),
+    url("../fonts/Mukta-Light.ttf") format("ttf");
+  font-display: swap;
 }
 
 :root {
@@ -31,19 +39,27 @@
   --space-s-l: clamp(1rem, calc(0.43rem + 2.86vw), 2.75rem);
 
   /* Type */
-  --step--2: clamp(0.63rem, calc(0.72rem + -0.11vw), 0.69rem);
-  --step--1: clamp(0.83rem, calc(0.82rem + 0.08vw), 0.88rem);
+  /* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1300,20,1.5,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+  --step--2: clamp(0.56rem, calc(0.74rem + -0.23vw), 0.69rem);
+  --step--1: clamp(0.83rem, calc(0.83rem + 0vw), 0.83rem);
   --step-0: clamp(1rem, calc(0.92rem + 0.41vw), 1.25rem);
-  --step-1: clamp(1.2rem, calc(1.01rem + 0.93vw), 1.77rem);
-  --step-2: clamp(1.44rem, calc(1.09rem + 1.73vw), 2.5rem);
-  --step-3: clamp(1.73rem, calc(1.14rem + 2.95vw), 3.53rem);
-  --step-4: clamp(2.07rem, calc(1.12rem + 4.77vw), 5rem);
-  --step-5: clamp(2.49rem, calc(0.99rem + 7.47vw), 7.07rem);
+  --step-1: clamp(1.2rem, calc(0.98rem + 1.1vw), 1.88rem);
+  --step-2: clamp(1.44rem, calc(0.99rem + 2.24vw), 2.81rem);
+  --step-3: clamp(1.73rem, calc(0.91rem + 4.07vw), 4.22rem);
+  --step-4: clamp(2.07rem, calc(0.68rem + 6.95vw), 6.33rem);
+  --step-5: clamp(2.49rem, calc(0.2rem + 11.44vw), 9.49rem);
+  --step-6: clamp(2.99rem, calc(-0.69rem + 18.37vw), 14.24rem);
 
+  /* Fonts */
+  --heading: "Teko", sans-serif;
+  --body: "Mukta Light", "Helvetica", sans-serif;
+
+  /* Colors */
   --accent1: hsl(306.9, 83.6%, 28.6%);
   --accent1-dark: hsl(306.9, 87.2%, 21.4%);
   --accent2: hsl(186.1, 61.4%, 28.4%);
-  --bg: hsl(183.5, 57.3%, 82.5%);
+  --bg: hsl(183.6, 76.9%, 74.5%);
+  --bg-light: hsl(183.5, 57.3%, 82.5%);
 }
 
 * {
@@ -51,9 +67,10 @@
 }
 
 body {
-  font-family: "Helvetica", sans-serif;
-  line-height: 1.6;
+  font-family: var(--body);
+  line-height: 1.4;
   font-size: var(--step-0);
+  font-weight: 300;
   margin: 0;
   min-height: 100vh;
 }
@@ -66,7 +83,8 @@ footer {
 h1,
 h2,
 h3 {
-  font-family: "Teko", sans-serif;
+  font-family: var(--heading);
+  font-weight: 500;
   line-height: 1;
   letter-spacing: -0.02em;
 }
@@ -99,7 +117,6 @@ a {
 a:hover,
 a:focus {
   text-underline-offset: 0.4em;
-  background: var(--accent2);
 }
 
 nav ul {

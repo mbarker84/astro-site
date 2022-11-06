@@ -1,10 +1,7 @@
 ---
-title: "Main heading"
-pubDate: 2022-11-03
-description: "The strapline for the heading"
-author: "Michelle"
+title: "No more fast fashion"
 type: "hero"
-body: "This is the body content"
+body: "The fashion industry is killing the planet."
 ---
 
-This is the section 1 content.
+In 2023 I pledge to buy no new clothing.
