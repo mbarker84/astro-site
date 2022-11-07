@@ -112,11 +112,17 @@ p {
 a {
   color: inherit;
   transition: background-color 200ms, color 200ms;
+  background: linear-gradient(to right, white 50%, transparent 0);
+  background-size: 200% 50%;
+  background-repeat: no-repeat;
+  background-position: 200% 100%;
+  transition: background-position 200ms;
 }
 
 a:hover,
 a:focus {
-  text-underline-offset: 0.4em;
+  background-position: 0 100%;
+  text-decoration: none;
 }
 
 nav ul {
