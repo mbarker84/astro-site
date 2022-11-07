@@ -55,11 +55,10 @@
   --body: "Mukta Light", "Helvetica", sans-serif;
 
   /* Colors */
-  --accent1: hsl(306.9, 83.6%, 28.6%);
-  --accent1-dark: hsl(306.9, 87.2%, 21.4%);
-  --accent2: hsl(186.1, 61.4%, 28.4%);
-  --bg: hsl(183.6, 76.9%, 74.5%);
-  --bg-light: hsl(183.5, 57.3%, 82.5%);
+  --bg: hsl(95.3, 73.9%, 77.5%);
+  --accent1: hsl(278.7, 82.1%, 26.3%);
+  --accent2: hsl(100, 35.7%, 28%);
+  --accent1-dark: hsl(278.8, 85.4%, 18.8%);
 }
 
 * {
