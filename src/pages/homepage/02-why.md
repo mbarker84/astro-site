@@ -3,6 +3,8 @@ title: "Why?"
 id: "#why"
 largeStatTitle: "One pair of jeans results in 33.4 kg CO2e emissions over the course of its lifecycle."
 largeStatBody: "That’s equivalent to 69 miles driven by the average US car, or watching 246 hours of TV on a plasma big-screen."
+largeStatImage:
+  { src: "../images/jeans.svg", alt: "Line drawing of a pair of jeans" }
 source:
   {
     title: "The Lifecycle of a Jean, Levi Strauss & Co.",

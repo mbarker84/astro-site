@@ -1,11 +1,14 @@
 ---
 const items = await Astro.glob("../pages/why/*.md");
+
+import waterImg from "../images/water.svg";
 ---
 
 <ul role="list" class="grid">
   {
     items.map((post) => (
       <li>
+        <img src={waterImg} />
         <h3>{post.frontmatter.title}</h3>
         <div set:html={post.compiledContent()} />
         {post.frontmatter.sources && <h4>Sources:</h4>}
@@ -37,6 +40,12 @@ const items = await Astro.glob("../pages/why/*.md");
     }
   }
 
+  @media (min-width: 900px) {
+    .grid {
+      gap: var(--space-2xl);
+    }
+  }
+
   h3 {
     font-size: var(--step-2);
   }
@@ -54,5 +63,10 @@ const items = await Astro.glob("../pages/why/*.md");
     font-size: 1rem;
     list-style: none;
     padding: 0;
+  }
+
+  img {
+    max-width: 10rem;
+    margin: 0 auto var(--space-s) auto;
   }
 </style>

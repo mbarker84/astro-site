@@ -5,6 +5,8 @@ import Hero from "../components/Hero.astro";
 import Grid from "../components/Grid.astro";
 import LargeStat from "../components/LargeStat.astro";
 
+import jeans from "../images/jeans.svg";
+
 import {
   frontmatter as section1Frontmatter,
   compiledContent as section1CompiledContent,
@@ -28,6 +30,10 @@ import {
         title={section1Frontmatter.largeStatTitle}
         body={section1Frontmatter.largeStatBody}
         source={section1Frontmatter.source}
+        img={{
+          src: jeans,
+          alt: "Line drawing of a pair of jeans",
+        }}
       />
       <Grid />
     </SectionBlock>

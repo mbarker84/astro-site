@@ -3,13 +3,16 @@ export interface Props {
   title: string;
   body: string;
   source: object;
+  img: object;
 }
 
-const { title, body, source } = Astro.props;
+const { title, body, source, img } = Astro.props;
 ---
 
 <article>
-  <div class="image-col"></div>
+  <div class="image-col">
+    <img src={img.src} alt={img.alt} />
+  </div>
   <div class="text-col">
     <h3>{title}</h3>
     <p>{body}</p>
