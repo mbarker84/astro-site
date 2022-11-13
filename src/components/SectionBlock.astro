@@ -42,6 +42,7 @@ const { title, id } = Astro.props;
 
   section:nth-child(odd) {
     --bgColor: var(--accent2);
+    --linkHoverColor: var(--accent1);
     color: white;
   }
 
@@ -53,9 +54,19 @@ const { title, id } = Astro.props;
     display: none;
   }
 
+  section:nth-child(odd) .markdown a {
+    color: var(--bg);
+  }
+
   svg {
     position: absolute;
     bottom: calc(100% - 1px);
     fill: var(--bgColor);
+  }
+
+  @media (min-width: 1020px) {
+    section {
+      padding: var(--space-3xl) 0 calc(var(--space-3xl) * 1.5);
+    }
   }
 </style>

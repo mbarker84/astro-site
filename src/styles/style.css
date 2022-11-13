@@ -55,10 +55,10 @@
   --body: "Mukta Light", "Helvetica", sans-serif;
 
   /* Colors */
-  --bg: hsl(95.3, 73.9%, 77.5%);
-  --accent1: hsl(278.7, 82.1%, 26.3%);
-  --accent2: hsl(100, 35.7%, 28%);
-  --accent1-dark: hsl(278.8, 85.4%, 18.8%);
+  --bg: hsl(78.7, 78.2%, 69.4%);
+  --accent1: hsl(263, 89.6%, 18.8%);
+  --accent2: hsl(263, 50.9%, 32.7%);
+  --accent1-dark: hsl(263, 89.6%, 13.8%);
 }
 
 * {
@@ -76,7 +76,8 @@ body {
 
 footer {
   padding: var(--space-s) var(--space-m);
-  background-color: var(--bg);
+  background-color: var(--accent1-dark);
+  color: white;
 }
 
 h1,
@@ -111,7 +112,11 @@ p {
 a {
   color: inherit;
   transition: background-color 200ms, color 200ms;
-  background: linear-gradient(to right, white 50%, transparent 0);
+  background: linear-gradient(
+    to right,
+    var(--linkHoverColor, white) 50%,
+    transparent 0
+  );
   background-size: 200% 50%;
   background-repeat: no-repeat;
   background-position: 200% 100%;
@@ -122,6 +127,12 @@ a:hover,
 a:focus {
   background-position: 0 100%;
   text-decoration: none;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  fill: currentColor;
 }
 
 nav ul {
@@ -153,8 +164,4 @@ strong {
 
 .markdown * + * {
   margin-top: var(--space-s);
-}
-
-.markdown a {
-  color: var(--accent1);
 }

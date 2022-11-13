@@ -2,13 +2,14 @@
 const items = await Astro.glob("../pages/why/*.md");
 
 import waterImg from "../images/water.svg";
+import { Icon } from "astro-icon";
 ---
 
 <ul role="list" class="grid">
   {
     items.map((post) => (
       <li>
-        <img src={waterImg} />
+        <Icon name="water" />
         <h3>{post.frontmatter.title}</h3>
         <div set:html={post.compiledContent()} />
         {post.frontmatter.sources && <h4>Sources:</h4>}
@@ -65,7 +66,7 @@ import waterImg from "../images/water.svg";
     padding: 0;
   }
 
-  img {
+  svg {
     max-width: 10rem;
     margin: 0 auto var(--space-s) auto;
   }

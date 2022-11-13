@@ -3,15 +3,17 @@ export interface Props {
   title: string;
   body: string;
   source: object;
-  img: object;
+  icon: string;
 }
 
 const { title, body, source, img } = Astro.props;
+
+import { Icon } from "astro-icon";
 ---
 
 <article>
   <div class="image-col">
-    <img src={img.src} alt={img.alt} />
+    <Icon name="jeans" />
   </div>
   <div class="text-col">
     <h3>{title}</h3>
@@ -27,6 +29,15 @@ const { title, body, source, img } = Astro.props;
     display: grid;
     gap: var(--space-m);
     margin-top: var(--space-xl);
+    background: var(--accent2);
+    color: white;
+    padding: var(--space-xl);
+    border-radius: var(--space-l);
+    transform: rotate(-3deg);
+  }
+
+  svg {
+    color: var(--accent1-dark);
   }
 
   @media (min-width: 800px) {
@@ -42,5 +53,7 @@ const { title, body, source, img } = Astro.props;
   cite {
     font-size: 1rem;
     font-style: normal;
+    margin-top: var(--space-xs);
+    display: block;
   }
 </style>
